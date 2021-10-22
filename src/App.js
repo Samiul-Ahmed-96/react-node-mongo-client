@@ -4,6 +4,7 @@ import './App.css';
 import AddUser from './Components/AddUser/AddUser';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
+import UpdateUser from './Components/UpdateUser/UpdateUser';
 import Users from './Components/Users/Users';
 
 function App() {
@@ -18,11 +19,14 @@ function App() {
           <Route path='/home'>
             <Home></Home>
           </Route>
-          <Route path='/users'>
+          <Route exact path='/users'>
             <Users></Users>
           </Route>
-          <Route path='/adduser'>
+          <Route path='/users/add'>
             <AddUser></AddUser>
+          </Route>
+          <Route path='/users/update/:id'>
+            <UpdateUser></UpdateUser>
           </Route>
 
         </Switch>
