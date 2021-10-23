@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Users = () => {
     const [users,setUsers] = useState([]);
@@ -34,7 +35,9 @@ const Users = () => {
             <ul>
                 {
                     users.map(user => <li key={user._id}>Name : {user.name} Email : {user.email} 
+                                            <Link to={`/users/update/${user._id}`}>
                                             <button>Update</button>
+                                            </Link>
                                             <button onClick={()=>handleDeleteUser(user._id)}>X</button>
                                       </li> )
                 }
